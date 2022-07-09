@@ -12,7 +12,7 @@ model's accuracy since we exclude the needed information for the question to be 
 </p>
 
 # Model accuracy
-Produced with the standford evaluation script
+Produced with the standford evaluation script. A json prediction file is created with the expected format.
 
 **exact**: 64.51612903225806
 
@@ -37,6 +37,20 @@ Within the notebook we test the model's accuracy on the TriviaQA dataset (traine
 # Checkpoints
 Since the training time is quite high due to the model's complexity, each epoch is saved inside a checkpoint folder that can be
 loaded if needed for further retraining.
+
+# Hyper-parameters
+Various parameters were tried. A grid search was not possible so they were tested empyrically with the following syntax
+```
+TryModel({
+    'name_prefix': squad_prefix,
+    'load_saved_model': False,
+    'training_set': squad_training_dataset,
+    'n_epochs': 2,
+    'batch_s': 24, # Make this smaller if vram problems occure.
+    'lr': 3e-5, 
+    'max_length': 384 # None for max
+});
+```
 
 # Examples from trained model
 (The following examples are taken from the notebook itself)
