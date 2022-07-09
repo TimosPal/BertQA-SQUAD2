@@ -6,7 +6,7 @@ A bert based model trained on the squad 2 dataset for question answering using h
 The sequence length argument strongly corelates to the required memory usage and the corresponding batch size. We notice most contexts contain less than 30 words. Lesser values reduce the
 model's accuracy since we exclude the needed information for the question to be answered.
 
-<p align="center">
+<p align="left">
   <img src="./squad_hist.png" alt="histogram"/>
 </p>
 
